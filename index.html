@@ -2,11 +2,42 @@
 <html>
 <head>
   <title>Universal Link Test</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block; /* Allows setting padding and width */
+      padding: 20px 40px; /* Increase padding for a bigger button */
+      background-color: #007bff; /* Example background color */
+      color: white;
+      text-decoration: none;
+      border-radius: 8px; /* Slightly rounded corners */
+      font-size: 24px; /* Larger font size */
+      font-weight: bold;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    a:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+  </style>
 </head>
 <body>
   <h1>Test Universal Link</h1>
   <a href="https://transactionbanking-uat.tosulmara.com/activation/addConnection?qrCodeData=g3MD0fL6LUWv6nSutZ6Nag.1753184292.vTuVNrM/oEgtDmM/BCAYptGvliZZSk5GsPehgCQ8knAge7j5FtagmJiS2p5bvlQfZIU90JJfYXKOdBGBqkXpBg==">
-    🔗 Open App via Universal Link
+    Open App via Universal Link
   </a>
 </body>
 </html>
