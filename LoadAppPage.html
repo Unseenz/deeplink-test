@@ -91,6 +91,30 @@ window.getUserAgent = () => {
             window.location.href = "https://unseenz.github.io/deeplink-test/LoadAppPage.html";
         }
     </script>
+    
+  <script>
+    window.onload = function () {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Replace with your actual deep link and store URLs
+      const appScheme = "https://unseenz.github.io/deeplink-test/LoadAppPage.html"; // Deep link to open the app
+      const androidStoreURL = "https://play.google.com/store/apps/details?id=com.bangkokbank.TokenTransactionBanking";
+      const iosStoreURL = "https://apps.apple.com/th/app/token-transaction-banking/id6451131323";
+
+      // Try to open the app
+      window.location = appScheme;
+
+      // If the app is not installed, redirect to the store after a short delay
+      setTimeout(() => {
+        if (/android/i.test(userAgent)) {
+          window.location = androidStoreURL;
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location = iosStoreURL;
+        }
+      }, 1500); // Adjust delay as needed
+    };
+  </script>
+
 
 
 </body></html>
