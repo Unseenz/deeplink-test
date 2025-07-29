@@ -72,5 +72,25 @@ window.getUserAgent = () => {
         }
     </script>
 
+    <script>
+        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.bangkokbank.TokenTransactionBanking"; // Replace with your Play Store URL
+        const appStoreUrl = "https://apps.apple.com/th/app/token-transaction-banking/id6451131323"; // Replace with your App Store URL
+
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+            setTimeout(function() {
+                window.location.href = playStoreUrl;
+            }, 500); // 500ms timeout to allow app to launch
+        } else if (/ipad|iphone|ipod/.test(userAgent) && !window.MSStream) {
+            setTimeout(function() {
+                window.location.href = appStoreUrl;
+            }, 500); // 500ms timeout to allow app to launch
+        } else {
+            // Handle desktop or other cases, or provide a default website
+            window.location.href = "https://unseenz.github.io/deeplink-test/LoadAppPage.html";
+        }
+    </script>
+
 
 </body></html>
